@@ -1,5 +1,6 @@
-    document.querySelector('form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent the default form submission
+document.querySelector('form').addEventListener('submit', function (event) {
+        // Prevent the default form submission
+        event.preventDefault(); 
 
         // Get form elements such as name, email, and message
         const name = document.querySelector('input[name="Name"]');
@@ -51,4 +52,4 @@
             alert('Form submitted successfully!');
             this.submit();
         }
-}   );
+});
