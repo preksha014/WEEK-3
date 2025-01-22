@@ -136,20 +136,40 @@
 
 
 //DOM Manipulation
-let child=document.querySelector('#fheading');
-let parent=child.parentElement;
-parent.removeChild(child);
+// let child=document.querySelector('#fheading');
+// let parent=child.parentElement;
+// parent.removeChild(child);
 
-let button=document.querySelector('#btn');
-function changeColor(){
-    button.style.backgroundColor='red';
+
+//Event
+// let button=document.querySelector('#btn');
+// function changeColor(){
+//     button.style.backgroundColor='red';
+// }
+
+// button.addEventListener('click',function changeColor(){
+//     button.style.backgroundColor='red';
+//     console.log('Button clicked');
+// });
+// button.removeEventListener('click',function changeColor(){
+//     button.style.backgroundColor='red';
+//     console.log('Button not clicked');
+// }); 
+
+
+//Error handling
+//Types of errors-->run-time errors, compile-time errors
+
+// console.log(1; //compile-time error---syntax error
+// console.log(a); //run-time error---reference error
+
+try{
+    let x=1;
+    console.log(x);
 }
-
-button.addEventListener('click',function changeColor(){
-    button.style.backgroundColor='red';
-    console.log('Button clicked');
-});
-button.removeEventListener('click',function changeColor(){
-    button.style.backgroundColor='red';
-    console.log('Button not clicked');
-}); 
+catch(err){
+    console.log(err);
+}
+finally{
+    console.log("I m in finally block");
+}
