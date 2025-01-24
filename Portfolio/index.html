@@ -8,28 +8,36 @@
     <link rel="stylesheet" href="main.css">
     <script src="https://kit.fontawesome.com/20f5d418fc.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
-    <!-- Home Section -->
-    <div id="Home" class="bg-gray-100">
+    <div id="Home" class="bg-gray-100 min-h-screen md:h-[80vh] lg:h-[60vh]">
         <div class="container mx-auto px-4 py-8">
-            <nav class="fixed top-0 right-0 z-10 bg-white w-full shadow">
-                <ul class="flex justify-end items-center p-4 space-x-6">
+            <nav class="fixed top-0 right-0 z-1 bg-white w-full shadow">
+                <div class="flex justify-end items-end p-4">
+                    <!--Icon -->
+                    <button id="menu-btn" class="block md:hidden focus:outline-none">
+                        <svg class="w-6 h-6 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+                <!-- Menu Items -->
+                <ul id="menu" class="hidden flex flex-col items-end justify-end py-5 md:flex md:flex-row md:justify-end md:items-center space-y-4 md:space-y-0 md:space-x-6 p-4 md:p-0">
                     <li><a href="#Home" class="text-lg text-gray-800 hover:text-indigo-500">Home</a></li>
                     <li><a href="#About" class="text-lg text-gray-800 hover:text-indigo-500">About</a></li>
                     <li><a href="#Project" class="text-lg text-gray-800 hover:text-indigo-500">Projects</a></li>
                     <li><a href="#Contact" class="text-lg text-gray-800 hover:text-indigo-500">Contact</a></li>
                 </ul>
             </nav>
+            
             <div class="flex flex-wrap items-center py-20">
                 <div class="w-full flex justify-center md:w-1/2">
-                    <div class="text-center md:text-left px-4">
+                    <div class="text-center my-28 mx-28 md:text-left px-4">
                         <p class="text-xl">Web Developer</p>
                         <h1 class="text-5xl mt-4">Hello,<br>I'm <span class="text-indigo-500">Preksha Rana</span></h1>
-                        <p class="text-2xl pt-7">A great developer is not the one who never makes mistakes, but the one who learns and adapts quickly</p>
+                        <p class="text-xl pt-7">A great developer is not the one who never makes mistakes, but the one who learns and adapts quickly</p>
                     </div>
                 </div>
-                <div class="w-full flex justify-end md:w-1/2 ">
+                <div class="w-full flex justify-end md:w-1/2">
                     <img src="images/background-image.jpg" class="rounded-full w-72 h-72 mx-auto md:mx-0">
                 </div>
             </div>
@@ -37,7 +45,7 @@
     </div>
 
     <!-- About Section -->
-    <div id="About" class="py-12 bg-gray-50">
+    <div id="About" class="flex justify-center items-center py-12 bg-gray-50 min-h-screen md:h-[80vh] lg:h-[60vh]">
         <div class="container mx-auto px-4 flex flex-wrap">
             <div class="w-full md:w-1/2">
                 <div class="flex items-center mb-6 flex-col md:flex md:flex-row">  
@@ -90,42 +98,72 @@
             </div>
         </div>
     </div>
-
     <!-- Projects Section -->
-    <div id="Project" class="py-12 bg-white">
+    <div id="Project" class="py-12 bg-white min-h-screen md:h-[80vh] lg:h-[60vh]">
         <div class="container mx-auto px-4">
-            <h1 class="text-3xl font-bold text-center my-10  mb-16 ">My Projects</h1>
+            <h1 class="text-3xl font-bold text-center my-10 mb-16">My Projects</h1>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <h2 class="text-xl font-bold mb-4">EliteEstate-Real Estate Application</h2>
-                    <img src="/images/P1.png" class="w-full h-40 mb-4">
+
+                <!-- Project 1 -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md project-gallery">
+                    <h2 class="text-xl font-bold mb-4 text-center">EliteEstate-Real Estate Application</h2>
+                    <div class="gallery-wrapper relative group">
+                        <div class="gallery-images relative w-full h-40 mb-4">
+                            <img src="/images/P1.png" class="absolute top-0 left-0 w-full h-full object-cover hidden">
+                            <img src="/images/P1_1.png" class="absolute top-0 left-0 w-full h-full object-cover hidden">
+                            <img src="/images/P1_2.png" class="absolute top-0 left-0 w-full h-full object-cover">
+                            <button class="prev-btn absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-200 text-gray-600 px-3 py-2 rounded-[50%] shadow-md opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gray-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-300"><i class="fas fa-chevron-left text-xs"></i></button>
+                            <button class="next-btn absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-200 text-gray-600 px-3 py-2 rounded-[50%] shadow-md opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gray-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-300"><i class="fas fa-chevron-right text-xs"></i></button>
+                        </div>
+                    </div>
                     <p class="text-sm my-5">Developed and built with React, utilizing Tailwind CSS for a responsive user interface and Express and Node.js for creating robust APIs for property listings and transactions, and used MongoDB for efficient data management and storage.</p>
                     <div class="flex justify-center">
                         <a href="#">
                             <i class="fa-solid fa-arrow-up-right-from-square text-xl hover:scale-110 transition-transform flex align-middle"></i>
-                          </a> 
-                    </div>               
+                        </a>
+                    </div>
                 </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <h2 class="text-xl font-bold mb-4">JobZee-Job Seeking Website</h2>
-                    <img src="images/P2.png" class="w-full h-40 mb-4">
+
+                <!-- Project 2 -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md project-gallery">
+                    <h2 class="text-xl font-bold mb-4 text-center">JobZee-Job Seeking Website</h2>
+                    <div class="gallery-wrapper relative group">
+                        <div class="gallery-images relative w-full h-40 mb-4 ">
+                            <img src="/images/P2.png" class="absolute top-0 left-0 w-full h-full object-cover hidden">
+                            <img src="/images/P2_1.png" class="absolute top-0 left-0 w-full h-full object-cover hidden">
+                            <img src="/images/P2_2.png" class="absolute top-0 left-0 w-full h-full object-cover">
+                            <button class="prev-btn absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-200 text-gray-600 px-3 py-2 rounded-[50%] shadow-md opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gray-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-300"><i class="fas fa-chevron-left text-xs"></i></button>
+                            <button class="next-btn absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-200 text-gray-600 px-3 py-2 rounded-[50%] shadow-md opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gray-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-300"><i class="fas fa-chevron-right text-xs"></i></button>
+                        </div>
+                    </div>
                     <p class="text-sm my-5">Developed an interactive user interface with React and Vite, implemented server-side functionality using Express and Node.js, including RESTful APIs for job listings, user authentication, and profile management.</p>
                     <div class="flex justify-center">
                         <a href="#">
                             <i class="fa-solid fa-arrow-up-right-from-square text-xl hover:scale-110 transition-transform flex align-middle"></i>
-                          </a> 
-                    </div>               
+                        </a>
+                    </div>
                 </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <h2 class="text-xl font-bold mb-4">Online School Documents Processing System</h2>
-                    <img src="images/P3.png" class="w-full h-40 mb-4">
+
+                <!-- Project 3 -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md project-gallery">
+                    <h2 class="text-xl font-bold mb-4 text-center">Online School Documents Processing System</h2>
+                    <div class="gallery-wrapper relative group">
+                        <div class="gallery-images relative w-full h-40 mb-4">
+                            <img src="/images/P3.png" class="absolute top-0 left-0 w-full h-full object-cover hidden">
+                            <img src="/images/P3_1.png" class="absolute top-0 left-0 w-full h-full object-cover hidden">
+                            <img src="/images/P3_2.png" class="absolute top-0 left-0 w-full h-full object-cover">
+                            <button class="prev-btn absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-200 text-gray-600 px-3 py-2 rounded-[50%] shadow-md opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gray-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-300"><i class="fas fa-chevron-left text-xs"></i></button>
+                            <button class="next-btn absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-200 text-gray-600 px-3 py-2 rounded-[50%] shadow-md opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gray-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-300"><i class="fas fa-chevron-right text-xs"></i></button>
+                        </div>
+                    </div>
                     <p class="text-sm my-5">The Online School Documents Processing System intends to automate the whole process of requesting and processing school documents. The students and the registrar’s office can transact electronically to complete the document processing.</p>
                     <div class="flex justify-center">
                         <a href="#">
                             <i class="fa-solid fa-arrow-up-right-from-square text-xl hover:scale-110 transition-transform flex align-middle"></i>
-                          </a> 
-                    </div>                
+                        </a>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -153,7 +191,7 @@
     
             <!-- Right Box -->
             <div class="right-box p-6 bg-gray-100 rounded-lg shadow-md">
-                <form class="grid gap-2">
+                <form id="contact-form" class="grid gap-2">
                     <input type="text" name="Name" placeholder="Your Name" class="p-4 border border-indigo-600 rounded-md text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
                     <input type="text" name="email" placeholder="Your Email" class="p-4 border border-indigo-600 rounded-md text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
                     <textarea name="Message" rows="6" placeholder="Your Message" class="p-4 border border-indigo-600 rounded-md text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
@@ -161,7 +199,12 @@
                 </form>
             </div>
         </div>
-    </div>    
+    </div>
+
+    <!-- Message Box -->
+    <div id="message-box" class="fixed bottom-5 right-0 transform -translate-x-1/2 bg-indigo-600 text-white px-6 py-3 rounded-md shadow-lg hidden">
+        <span id="message-text">Form submitted successfully!</span>
+    </div>
     <script src="/index.js"></script>
 </body>
 </html>

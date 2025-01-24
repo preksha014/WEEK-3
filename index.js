@@ -164,13 +164,96 @@
 // console.log(1; //compile-time error---syntax error
 // console.log(a); //run-time error---reference error
 
-try{
-    let x=1;
-    console.log(x);
-}
-catch(err){
-    console.log(err);
-}
-finally{
-    console.log("I m in finally block");
-}
+// try{
+//     let x=1;
+//     console.log(x);
+// }
+// catch(err){
+//     console.log(err);
+// }
+// finally{
+//     console.log("I m in finally block");
+// }
+
+
+//Asynchronous programming
+// Asynchronous code--> handle-Event Loop
+
+
+//Promise--> object that returns state of aysnchronous operation--> pending, fulfilled, rejected
+
+// let firstPromise=new Promise((resolve,reject)=>{
+//     console.log("First promise");
+//     setTimeout(()=>{
+//         console.log("Hello, Preksha");
+//     },5000);
+//     let x=false;
+//     if(x==true){
+//         resolve();
+//     }else{
+//         reject();
+//     }
+// })
+
+// firstPromise.then(()=>{
+//     console.log("First promise resolved");
+// }).then(()=>{
+//     console.log("Second promise resolved");
+// }).then(()=>{
+//     console.log("Third promise resolved");
+// }).catch((error)=>{
+//     console.log("Error occured");
+// })
+
+// //Async-await
+
+// //scenario: ftech weather data from API
+// //1. url/end-point-->sync
+// //2. fetch data from API-->async-->await (synchronous behavior)
+// //3. process data-->sync
+
+// async function fetchWeatherData(){
+//     //fetch data from API
+//     let data=await fetch("https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m");
+//     //parse data into json data
+//     let jsonData=await data.json();
+//     console.log(jsonData);
+// }
+// fetchWeatherData();
+
+//closures-->function with lexical environment
+// function x(){
+//     let num1=10;
+//     function y(){
+//         let num2=20;
+//          function z(){
+//             console.log(num1+num2);
+//         }
+//         num2=40;
+//         z();
+//     }
+//     y();
+// }
+// x();
+
+// window.onscroll=()=>{
+// 	if((window.innerHeight+window.pageYOffset)>=document.body.offsetHeight){
+// 	    // console.log("End of page");
+//     }
+// }
+
+// const toTop=()=>window.scrollTo({top:0,behavior:'smooth'});
+
+// const isDarkMode=()=>{
+//     return window.matchMedia('(prefers-color-scheme: dark)').matches;
+// }
+
+//localStorage, sessionStorage and cookies
+localStorage.setItem('name','Preksha');
+localStorage.setItem('age',21);
+console.log(localStorage.getItem('name'));
+console.log(localStorage.getItem('age'));
+
+sessionStorage.setItem('name','Preksha');
+sessionStorage.setItem('age',21);
+// sessionStorage.clear();

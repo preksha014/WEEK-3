@@ -17,6 +17,60 @@
     <div>
         <button id="btn" style="background-color: aqua;">click me</button>
     </div>
+    <button style="margin-top:700px" onclick="toTop()">Back to top</button>
+    <div style="margin-top:800px">
+        helooo
+    </div>
+    <!-- <div class="slider-container">
+        <img id="slider" src="image1.png" alt="Image Slider">
+        <img id="slider" src="image2.png" alt="Image Slider">
+        <img id="slider" src="image1.png" alt="Image Slider">
+        <div class="controls">
+            <button class="button" onclick="prevImage()">Previous</button>
+            <button class="button" onclick="nextImage()">Next</button>
+        </div>
+    </div>
+    <div class="slider-container">
+        <div class="slider">
+            <img src="image1.png" alt="Image 1">
+            <img src="image2.png" alt="Image 2">
+            <img src="image3.png" alt="Image 3">
+        </div>
+        <div class="buttons">
+            <button id="prev">&#10094;</button>
+            <button id="next">&#10095;</button>
+        </div>
+    </div> -->
+    
+    <!-- <script>
+        const slider = document.querySelector('.slider');
+        const images = document.querySelectorAll('.slider img');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+    
+        let index = 0;
+    
+        function showImage(idx) {
+            const offset = -idx * 100; // Move the slider
+            slider.style.transform = `translateX(${offset}%)`;
+        }
+    
+        function nextImage() {
+            index = (index + 1) % images.length;
+            showImage(index);
+        }
+    
+        function prevImage() {
+            index = (index - 1 + images.length) % images.length;
+            showImage(index);
+        }
+    
+        nextButton.addEventListener('click', nextImage);
+        prevButton.addEventListener('click', prevImage);
+    
+        // Auto-slide functionality
+        setInterval(nextImage, 3000); // Change image every 3 seconds
+    </script> -->
     <script src="index.js"></script>
 
 </body>
